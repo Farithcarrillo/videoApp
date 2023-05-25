@@ -3,7 +3,6 @@
 Para realizar la ejecucion de los distintos puntos solicitados para la prueba se necesita tener instalado las siguientes tecnologias:
 
 NODE.JS
-MYSQL (Para base de datos), correr el archivo query.sql para crear modelo de base de datos
 
 Correr:
 >npm install 
