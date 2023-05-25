@@ -44,27 +44,6 @@ INSERT INTO `authentication` (`id`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `clientes`
---
-
-CREATE TABLE `clientes` (
-  `id` int(11) NOT NULL,
-  `nombre` varchar(20) NOT NULL,
-  `edad` int(2) NOT NULL,
-  `profesion` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `clientes`
---
-
-INSERT INTO `clientes` (`id`, `nombre`, `edad`, `profesion`) VALUES
-(2, 'santiago', 25, 'Abogado'),
-(3, 'Mariangel', 30, 'Medico');
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `comments`
 --
 
@@ -110,27 +89,6 @@ INSERT INTO `users` (`id`, `name`, `created_at`) VALUES
 
 -- --------------------------------------------------------
 
---
--- Estructura de tabla para la tabla `usuarios`
---
-
-CREATE TABLE `usuarios` (
-  `id` int(10) NOT NULL,
-  `nombre` varchar(20) NOT NULL,
-  `activo` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `usuarios`
---
-
-INSERT INTO `usuarios` (`id`, `nombre`, `activo`) VALUES
-(1, 'Farith', 1),
-(2, 'SANTIAGO ARANGO', 1),
-(3, 'WILSON', 1),
-(4, 'JUAN CARLOS', 1),
-(5, 'FARITH', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -166,12 +124,6 @@ ALTER TABLE `authentication`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `clientes`
---
-ALTER TABLE `clientes`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indices de la tabla `comments`
 --
 ALTER TABLE `comments`
@@ -194,12 +146,6 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indices de la tabla `videos`
 --
 ALTER TABLE `videos`
@@ -209,12 +155,6 @@ ALTER TABLE `videos`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
-
---
--- AUTO_INCREMENT de la tabla `clientes`
---
-ALTER TABLE `clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `comments`
@@ -233,12 +173,6 @@ ALTER TABLE `likes`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `videos`
