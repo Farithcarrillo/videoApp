@@ -7,7 +7,7 @@ const options ={
         openapi: "3.0.0",
         info: { title: 'VideoApp', version: '1.0.0' },
     },
-    apis: ['../users/routes.js'],
+    apis: ['src/modules/users/routes.js'],
 };
 
 //Docs in JSON format

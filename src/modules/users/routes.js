@@ -7,7 +7,82 @@ const {validateCreate} = require('./validator');
 
 const router = express.Router();
 
+/**
+ * @openapi
+ /api/users:
+ *   get:
+ *     summary: Obtiene todos los usuarios
+ *     description: Retorna una lista de todos los usuarios registrados.
+ *     responses:
+ *       200:
+ *         description: Lista de usuarios obtenida correctamente.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: string
+ *                   example: OK
+ *                 data:
+ *                   type: array
+ *                   items:
+ *                      type: object
+ */
 router.get('/', getAll);
+
+/**
+ * @openapi
+ * /api/users/{id}:
+ *   get:
+ *     summary: Obtiene los datos de un usuario por ID
+ *     description: Retorna los datos de un usuario específico basado en su ID.
+ *     parameters:
+ *       - name: id
+ *         in: path
+ *         description: ID del usuario
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Usuario obtenido correctamente.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: string
+ *                   example: OK
+ */
+router.get('/:id', getById);
+
+/**
+ * @openapi
+ * /api/users/{id}:
+ *   get:
+ *     summary: Obtiene los datos de un usuario por ID
+ *     description: Retorna los datos de un usuario     específico basado en su ID.
+ *     parameters:
+ *       - name: id
+ *         description: ID del usuario
+ *         required: true
+ *         schema:
+ *           type: int
+ *     responses:
+ *       200:
+ *         description: Usuario obtenido correctamente.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: string
+ *                   example: OK
+ *                 
+ */
 router.get('/:id', getById);
 router.post('/', validateCreate, add);
 router.put('/', security(), remove);
