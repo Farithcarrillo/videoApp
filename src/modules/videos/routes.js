@@ -5,6 +5,28 @@ const security = require('./security');
 
 const router = express.Router();
 
+/**
+ * @openapi
+ /api/videos:
+ *   get:
+ *     summary: Obtiene todos los videos
+ *     description: Retorna una lista de todos los videos registrados.
+ *     responses:
+ *       200:
+ *         description: Lista de videos obtenida correctamente.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: string
+ *                   example: OK
+ *                 data:
+ *                   type: array
+ *                   items:
+ *                      type: object
+ */
 router.get('/', getAll);
 router.get('/:id', getById);
 router.put('/', remove);
